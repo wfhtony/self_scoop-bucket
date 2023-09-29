@@ -4,7 +4,7 @@
     "homepage": "https://github.com/shaka-project/shaka-packager",
     "license": "Other",
     "url": [
-    "https://github.com/shaka-project/shaka-packager/releases/download/v2.6.1/packager-win-x64.exe#/packager.exe",
+    "https://github.com/shaka-project/shaka-packager/releases/download/v2.6.1/packager-win-x64.exe#/shaka-packager.exe",
     "https://github.com/shaka-project/shaka-packager/releases/download/v2.6.1/mpd_generator-win-x64.exe#/mpd_generator.exe"
     ],
     "hash": [
@@ -12,13 +12,13 @@
     "1b1ca7df48a8a3dcd72824b169ad6a9aa26c2a2d7debc6b894dae03a92566322"
     ],
     "bin": [
-    "packager.exe",
+    "shaka-packager.exe",
     "mpd_generator.exe"
     ],
     "checkver": "github",
     "autoupdate": {
         "url": [
-    "https://github.com/shaka-project/shaka-packager/releases/download/v$version/packager-win-x64.exe#/packager.exe",
+    "https://github.com/shaka-project/shaka-packager/releases/download/v$version/packager-win-x64.exe#/shaka-packager.exe",
     "https://github.com/shaka-project/shaka-packager/releases/download/v$version/mpd_generator-win-x64.exe#/mpd_generator.exe"
     ]
     }
