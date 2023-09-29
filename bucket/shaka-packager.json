@@ -12,7 +12,7 @@
     "bin": "packager-win-x64.exe",
     "checkver": "github",
     "autoupdate": {
-	    "64bit": {
+        "64bit": {
                 "url": "https://github.com/shaka-project/shaka-packager/releases/download/v$version/packager-win-x64.exe"
             }
     }
