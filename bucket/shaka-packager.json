@@ -3,7 +3,7 @@
     "description": "A media packaging and development framework for VOD and Live DASH and HLS applications, supporting Common Encryption for Widevine and other DRM Systems.",
     "homepage": "https://github.com/shaka-project/shaka-packager",
     "license": "Other",
-    "url": [ 
+    "url": [
     "https://github.com/shaka-project/shaka-packager/releases/download/v2.6.1/packager-win-x64.exe#/packager.exe",
     "https://github.com/shaka-project/shaka-packager/releases/download/v2.6.1/mpd_generator-win-x64.exe#/mpd_generator.exe"
     ],
@@ -17,7 +17,7 @@
     ],
     "checkver": "github",
     "autoupdate": {
-        "url": [ 
+        "url": [
     "https://github.com/shaka-project/shaka-packager/releases/download/v$version/packager-win-x64.exe#/packager.exe",
     "https://github.com/shaka-project/shaka-packager/releases/download/v$version/mpd_generator-win-x64.exe#/mpd_generator.exe"
     ]
