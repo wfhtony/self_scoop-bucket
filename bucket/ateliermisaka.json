@@ -25,6 +25,7 @@
         "Settings\\Artists_Patreon.json",
         "Settings\\Setting_Normal.ini",
         "Data.db",
+        "Lang.ini",
         "error.log",
         "error_download.log"
     ],
