@@ -23,7 +23,7 @@
         "Settings\\Artists_Fanbox.json",
         "Settings\\Setting_Patreon.ini",
         "Settings\\Artists_Patreon.json",
-        "Settings\\Setting_Normal",
+        "Settings\\Setting_Normal.ini",
         "Data.db",
         "error.log",
         "error_download.log"
