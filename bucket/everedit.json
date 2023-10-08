@@ -25,7 +25,10 @@
         "key.ini",
         "mylist.txt"
     ],
-    "checkver": "http://www.everedit.net/latest.php?cpu=x64&portable=1",
+    "checkver": {
+        "url": "http://www.everedit.net/latest.php?cpu=x64&portable=1",
+        "regex": "everedit_win64_(?<buildVersion>[0-9]{4})_portable.zip"
+    }
     "autoupdate": {
         "url": "http://116.198.40.241/everedit_win64_$buildVersion_portable.zip"
     }
