@@ -6,6 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://git.suyu.dev/suyu/suyu/releases/download/v0.0.3/Suyu-Windows_x86_64.tar.xz",
+            "extract_dir": "suyu-windows-mingw-20240410-0de49070e4_",
             "hash": "80d21e26b7fb09b6e8095af1251045ca8542ff7f08f62736611ee2d5e0f575e1"
         }
     },
