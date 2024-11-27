@@ -11,6 +11,7 @@
             "Celestite"
         ]
     ],
+    "persist": "data",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/Kengxxiao/CelestiteLauncher/releases/download/$version/Celestite_Windows_$version.zip"
