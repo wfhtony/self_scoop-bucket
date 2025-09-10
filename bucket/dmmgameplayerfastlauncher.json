@@ -11,7 +11,11 @@
             "DMMGamePlayerFastLauncher"
         ]
     ],
-    "persist": "data",
+    "persist": [
+        "data",
+        "assets",
+        "tools"
+    ],
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/fa0311/DMMGamePlayerFastLauncher/releases/download/v$version/DMMGamePlayerFastLauncher.exe"
