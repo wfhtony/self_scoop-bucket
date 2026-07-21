@@ -1,5 +1,5 @@
 {
-    "version": "0.6.0-beta+20260628161200",
+    "version": "0.6.0-beta+20260628161301",
     "description": "DASH/HLS/MSS stream downloader supporting on-demand & live broadcasts",
     "homepage": "https://github.com/nilaoda/N_m3u8DL-RE",
     "license": "MIT",
