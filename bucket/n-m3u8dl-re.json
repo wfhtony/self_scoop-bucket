@@ -1,5 +1,5 @@
 {
-    "version": "0.2.3-beta+20241201042319",
+    "version": "0.6.0-beta+20260628161200",
     "description": "DASH/HLS/MSS stream downloader supporting on-demand & live broadcasts",
     "homepage": "https://github.com/nilaoda/N_m3u8DL-RE",
     "license": "MIT",
@@ -16,31 +16,31 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/nilaoda/N_m3u8DL-RE/releases/download/v0.2.3-beta/N_m3u8DL-RE_Beta_win-x64_20241201.zip",
-            "hash": "cf80c9de14cb66b3bd679851845c5eac6307accdd6db0cb97860d0b833b98988"
+            "url": "https://github.com/nilaoda/N_m3u8DL-RE/releases/download/v0.6.0-beta/N_m3u8DL-RE_v0.6.0-beta_win-x64_20260629.zip",
+            "hash": "3825fd42ee502f98a9378f6fdddb2f7822709f521806214f466db6935c950f1a"
         }
     },
     "bin": "N_m3u8DL-RE.exe",
     "checkver": {
         "script": [
-            "$cont = (Invoke-RestMethod -UseBasicParsing -Method Get -Headers @{'Accept'='application/vnd.github+json';'Accept-Encoding'='gzip'} -MaximumRedirection 0 -Uri 'https://api.github.com/repos/nilaoda/N_m3u8DL-RE/releases?per_page=1')[0]",
+            "$cont = (Invoke-RestMethod -UseBasicParsing -Uri 'https://api.github.com/repos/nilaoda/N_m3u8DL-RE/releases?per_page=1')[0]",
             "$basever = $cont.tag_name.TrimStart('v')",
             "foreach ($_ in $cont.assets) {",
-            "  if ($_.name -cmatch '^N_m3u8DL-RE_(?<phase>[A-Za-z]+_)?win-x64_(?<date>\\d+)\\.zip$') {",
+            "  if ($_.name -match '^N_m3u8DL-RE_v[\\w.-]+_win-x64_(\\d+)\\.zip$') {",
+            "    $date = $matches[1]",
             "    $updated_date = ([DateTime]$_.updated_at).ToUniversalTime().ToString('yyyyMMddHHmmss')",
-            "    Write-Output ('basever:\"' + $basever + '\"') ('phase:\"' + $matches.phase + '\"') ('date:\"' + $matches.date + '\"') ('updated_date:\"' + $updated_date + '\"')",
+            "    Write-Output ('basever:\"' + $basever + '\"') ('date:\"' + $date + '\"') ('updated_date:\"' + $updated_date + '\"')",
             "    break",
             "  }",
             "}"
         ],
-        "regex": "basever:\"(?<basever>[\\w.-]+)\"\\sphase:\"(?<phase>[A-Za-z]+_)?\"\\sdate:\"(?<date>\\d+)\"\\supdated_date:\"(?<updated_date>\\d+)\"",
+        "regex": "basever:\"(?<basever>[\\w.-]+)\"\\sdate:\"(?<date>\\d+)\"\\supdated_date:\"(?<updated_date>\\d+)\"",
         "replace": "${basever}+${updated_date}"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/nilaoda/N_m3u8DL-RE/releases/download/v$matchBasever/N_m3u8DL-RE_$matchPhasewin-x64_$matchDate.zip",
-                "extract_dir": "N_m3u8DL-RE_$matchPhasewin-x64"
+                "url": "https://github.com/nilaoda/N_m3u8DL-RE/releases/download/v$matchBasever/N_m3u8DL-RE_v$matchBasever_win-x64_$matchDate.zip"
             }
         }
     }
