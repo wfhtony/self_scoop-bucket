@@ -20,12 +20,13 @@
     "shortcuts": [
         [
             "DeepSeek Harness.exe",
-            "DeepSeek Harness"
+            "DeepSeek Harness",
+            "--user-data-dir=\"$persist_dir\\electron-profile\""
         ]
     ],
     "notes": [
         "dsh's data root (sessions, profiles, attachments, credentials) is redirected to '$persist_dir\\.dsh' through the DSH_HOME environment variable, so it lives in Scoop's persist directory and survives updates.",
-        "DeepSeek Harness also keeps its Electron profile in %APPDATA%\\@deepseek-ai\\dsh-desktop, outside the Scoop directory, so the UI state survives updates as well.",
+        "The Electron profile (Local Storage, keybindings, logs) is redirected to '$persist_dir\\electron-profile' through a '--user-data-dir' argument on the Start Menu shortcut; launching the .exe directly skips that switch.",
         "The desktop app has its own nightly updater; prefer 'scoop update deepseek-harness' so the install and this manifest stay in sync."
     ],
     "checkver": {
