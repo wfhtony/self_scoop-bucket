@@ -1,0 +1,56 @@
+{
+    "version": "2.1.0",
+    "description": "Desktop workspace for running and reviewing AI coding work with OpenCode",
+    "homepage": "https://github.com/openchamber/openchamber",
+    "license": "MIT",
+    "notes": [
+        "OpenChamber Desktop bundles its own OpenCode CLI (2.0.21 in this build), so a separate OpenCode installation is not required.",
+        "That bundled CLI is the same release as 'versions/opencode2', and both share the OpenCode 2.x profile in ~/.config/opencode and ~/.local/share/opencode, so provider credentials and sessions carry over either way.",
+        "An installed 'opencode2' of 2.0.20 or newer is only needed by the OpenChamber CLI/Web and VS Code surfaces, which run your own OpenCode binary instead of the bundled one.",
+        "The app ships its own updater; prefer 'scoop update openchamber-desktop' so the install and this manifest stay in sync."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/openchamber/openchamber/releases/download/v2.1.0/OpenChamber-2.1.0-win-x64.exe#/dl.7z",
+            "hash": "sha512:5ff8de269d6900ad0b96803898ebf745d8d6bab8185ddc8b77d8680a9fd6e711ab12a55b98b6e013e786a5441920f87ab0929b8b2d352d03f0bbd73daf553a61",
+            "installer": {
+                "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Removal"
+            }
+        },
+        "arm64": {
+            "url": "https://github.com/openchamber/openchamber/releases/download/v2.1.0/OpenChamber-2.1.0-win-arm64.exe#/dl.7z",
+            "hash": "sha512:a505db6825990e0a922f360d1eebc4f120126de4ba6df884e31e1cf0840635d604a0f7f024028af9148377ecc71997408d3126d0867aa248cc4f1172673819b0",
+            "installer": {
+                "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-arm64.7z\" \"$dir\" -Removal"
+            }
+        }
+    },
+    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\", \"$dir\\Uninstall*.exe\", \"$dir\\uninstallerIcon.ico\" -Force -Recurse -ErrorAction SilentlyContinue",
+    "shortcuts": [
+        [
+            "OpenChamber.exe",
+            "OpenChamber"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/openchamber/openchamber"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/openchamber/openchamber/releases/download/v$version/OpenChamber-$version-win-x64.exe#/dl.7z",
+                "hash": {
+                    "url": "https://github.com/openchamber/openchamber/releases/download/v$version/latest.yml",
+                    "regex": "sha512:\\s*$base64"
+                }
+            },
+            "arm64": {
+                "url": "https://github.com/openchamber/openchamber/releases/download/v$version/OpenChamber-$version-win-arm64.exe#/dl.7z",
+                "hash": {
+                    "url": "https://github.com/openchamber/openchamber/releases/download/v$version/latest-arm64.yml",
+                    "regex": "sha512:\\s*$base64"
+                }
+            }
+        }
+    }
+}
