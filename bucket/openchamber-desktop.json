@@ -7,7 +7,8 @@
         "OpenChamber Desktop bundles its own OpenCode CLI (2.0.21 in this build), so a separate OpenCode installation is not required.",
         "That bundled CLI is the same release as 'versions/opencode2', and both share the OpenCode 2.x profile in ~/.config/opencode and ~/.local/share/opencode, so provider credentials and sessions carry over either way.",
         "An installed 'opencode2' of 2.0.20 or newer is only needed by the OpenChamber CLI/Web and VS Code surfaces, which run your own OpenCode binary instead of the bundled one.",
-        "The Electron profile (Local Storage, caches, logs) is redirected to '$persist_dir\\electron-profile' by a '--user-data-dir' argument on the Start Menu shortcut, so it stays out of %APPDATA% and never collides with an OpenChamber installed by the official installer. Launching OpenChamber.exe directly skips that switch.",
+        "Both store locations live in Scoop's persist directory: the OpenChamber data directory (projects, sessions, settings, speech models) is '$persist_dir\\openchamber-data', migrated from ~/.config/openchamber on first install, and the Electron profile (Local Storage, caches, logs) is '$persist_dir\\electron-profile', set by a '--user-data-dir' argument on the Start Menu shortcut.",
+        "OPENCHAMBER_DATA_DIR is a USER-level environment variable with no per-shortcut equivalent, so an OpenChamber installed by the official installer uses the same data directory while this app is installed. 'scoop uninstall' removes that variable and the app falls back to ~/.config/openchamber, so copy the data back there before uninstalling, and never uninstall with '-p' unless you mean to delete the projects, sessions and speech models.",
         "The app ships its own updater; prefer 'scoop update openchamber-desktop' so the install and this manifest stay in sync."
     ],
     "architecture": {
@@ -26,8 +27,29 @@
             }
         }
     },
+    "pre_install": [
+        "$target = \"$persist_dir\\openchamber-data\"",
+        "$legacy = \"$env:USERPROFILE\\.config\\openchamber\"",
+        "if (!(Test-Path $target) -and (Test-Path $legacy) -and (Get-Process -Name 'OpenChamber' -ErrorAction SilentlyContinue)) {",
+        "    abort 'OpenChamber is running, so ~/.config/openchamber cannot be copied into Scoop persist safely. Close every OpenChamber window (including the tray icon), and use the official installer''s uninstaller or the tray Quit, then run the install again.'",
+        "}",
+        "if (!(Test-Path $target) -and (Test-Path $legacy)) {",
+        "    $previous = $ErrorActionPreference",
+        "    $ErrorActionPreference = 'Continue'",
+        "    $null = robocopy $legacy $target /E /R:1 /W:1 /NFL /NDL /NJH /NJS /NP /NC 2>&1",
+        "    $code = $LASTEXITCODE",
+        "    $ErrorActionPreference = $previous",
+        "    if ($code -ge 8) { warn \"robocopy exit $code while copying '$legacy' to '$target'; compare the two directories before relying on the new location.\" } else { info \"Copied '$legacy' to '$target'.\" }",
+        "}"
+    ],
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\", \"$dir\\Uninstall*.exe\", \"$dir\\uninstallerIcon.ico\" -Force -Recurse -ErrorAction SilentlyContinue",
-    "persist": "electron-profile",
+    "persist": [
+        "electron-profile",
+        "openchamber-data"
+    ],
+    "env_set": {
+        "OPENCHAMBER_DATA_DIR": "$persist_dir\\openchamber-data"
+    },
     "shortcuts": [
         [
             "OpenChamber.exe",
