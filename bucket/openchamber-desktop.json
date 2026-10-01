@@ -7,6 +7,7 @@
         "OpenChamber Desktop bundles its own OpenCode CLI (2.0.21 in this build), so a separate OpenCode installation is not required.",
         "That bundled CLI is the same release as 'versions/opencode2', and both share the OpenCode 2.x profile in ~/.config/opencode and ~/.local/share/opencode, so provider credentials and sessions carry over either way.",
         "An installed 'opencode2' of 2.0.20 or newer is only needed by the OpenChamber CLI/Web and VS Code surfaces, which run your own OpenCode binary instead of the bundled one.",
+        "The Electron profile (Local Storage, caches, logs) is redirected to '$persist_dir\\electron-profile' by a '--user-data-dir' argument on the Start Menu shortcut, so it stays out of %APPDATA% and never collides with an OpenChamber installed by the official installer. Launching OpenChamber.exe directly skips that switch.",
         "The app ships its own updater; prefer 'scoop update openchamber-desktop' so the install and this manifest stay in sync."
     ],
     "architecture": {
@@ -26,10 +27,12 @@
         }
     },
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\", \"$dir\\Uninstall*.exe\", \"$dir\\uninstallerIcon.ico\" -Force -Recurse -ErrorAction SilentlyContinue",
+    "persist": "electron-profile",
     "shortcuts": [
         [
             "OpenChamber.exe",
-            "OpenChamber"
+            "OpenChamber",
+            "--user-data-dir=\"$persist_dir\\electron-profile\""
         ]
     ],
     "checkver": {
