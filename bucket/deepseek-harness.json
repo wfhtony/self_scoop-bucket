@@ -13,6 +13,10 @@
         }
     },
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*.exe\", \"$dir\\7zip-installer-*.txt\" -Force -Recurse -ErrorAction SilentlyContinue",
+    "persist": ".dsh",
+    "env_set": {
+        "DSH_HOME": "$persist_dir\\.dsh"
+    },
     "shortcuts": [
         [
             "DeepSeek Harness.exe",
@@ -20,7 +24,8 @@
         ]
     ],
     "notes": [
-        "DeepSeek Harness keeps its data in %APPDATA%\\@deepseek-ai\\dsh-desktop, outside the Scoop directory, so it survives updates.",
+        "dsh's data root (sessions, profiles, attachments, credentials) is redirected to '$persist_dir\\.dsh' through the DSH_HOME environment variable, so it lives in Scoop's persist directory and survives updates.",
+        "DeepSeek Harness also keeps its Electron profile in %APPDATA%\\@deepseek-ai\\dsh-desktop, outside the Scoop directory, so the UI state survives updates as well.",
         "The desktop app has its own nightly updater; prefer 'scoop update deepseek-harness' so the install and this manifest stay in sync."
     ],
     "checkver": {
