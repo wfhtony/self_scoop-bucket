@@ -1,0 +1,90 @@
+{
+    "version": "0.9.2",
+    "description": "Open-source motion graphics and visual effects built in pure Rust: compositions, keyframes, tracking and rotoscoping",
+    "homepage": "https://github.com/storytold/effectcraft",
+    "license": "MIT OR Apache-2.0",
+    "notes": [
+        "EffectCraft's data directory (settings, autosave, logs) is redirected to '$persist_dir\\config' through the EFFECTCRAFT_CONFIG_DIR environment variable, so it lives in Scoop's persist store and survives 'scoop update'.",
+        "EFFECTCRAFT_CONFIG_DIR is a USER-level environment variable, so any other EffectCraft installation (the MSI build, for example) uses this directory too.",
+        "The first install copies an existing %APPDATA%\\EffectCraft into the persist folder. 'scoop uninstall' removes the variable and EffectCraft falls back to %APPDATA%\\EffectCraft, so the pre-uninstall hook mirrors the state back there first; that also runs on 'scoop update'.",
+        "'effectcraft-cli.exe' is exposed as the 'effectcraft-cli' shim.",
+        "The portable zip does not register the file associations that the MSI installer adds.",
+        "The app has no built-in updater; use 'scoop update effectcraft' so the install and this manifest stay in sync."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/storytold/effectcraft/releases/download/v0.9.2/effectcraft-0.9.2-windows-x64-portable.zip",
+            "hash": "1f6fbb3a348f1b12b15faa3bc2c78a079414f07454cc1402208793486e79bee4",
+            "installer": {
+                "script": [
+                    "$stage = \"$dir\\effectcraft-$version-windows-x64-portable\"",
+                    "Move-Item \"$stage\\*\" $dir -ErrorAction Stop",
+                    "Remove-Item $stage -ErrorAction Stop"
+                ]
+            }
+        },
+        "arm64": {
+            "url": "https://github.com/storytold/effectcraft/releases/download/v0.9.2/effectcraft-0.9.2-windows-arm64-portable.zip",
+            "hash": "2dede4e9aac41d989544e0f1e61c9c61c29dd65d15282ae18d5de5b56da5486c",
+            "installer": {
+                "script": [
+                    "$stage = \"$dir\\effectcraft-$version-windows-arm64-portable\"",
+                    "Move-Item \"$stage\\*\" $dir -ErrorAction Stop",
+                    "Remove-Item $stage -ErrorAction Stop"
+                ]
+            }
+        }
+    },
+    "pre_install": [
+        "$target = \"$persist_dir\\config\"",
+        "$legacy = \"$env:APPDATA\\EffectCraft\"",
+        "if (!(Test-Path $target) -and (Test-Path $legacy)) {",
+        "    if (Get-Process -Name 'effectcraft*' -ErrorAction SilentlyContinue) {",
+        "        abort 'EffectCraft is running, so %APPDATA%\\EffectCraft cannot be copied into Scoop persist safely. Quit EffectCraft, then run the install again.'",
+        "    }",
+        "    $previous = $ErrorActionPreference",
+        "    $ErrorActionPreference = 'Continue'",
+        "    $null = robocopy $legacy $target /E /R:1 /W:1 /NFL /NDL /NJH /NJS /NP /NC 2>&1",
+        "    $code = $LASTEXITCODE",
+        "    $ErrorActionPreference = $previous",
+        "    if ($code -ge 8) { warn \"robocopy exit $code while copying '$legacy' to '$target'; compare the two directories before relying on the new location.\" } else { info \"Copied '$legacy' to '$target'.\" }",
+        "}"
+    ],
+    "pre_uninstall": [
+        "$legacy = \"$env:APPDATA\\EffectCraft\"",
+        "$data = \"$persist_dir\\config\"",
+        "if (!(Test-Path $data) -or @(Get-ChildItem $data -Force).Count -eq 0) { return }",
+        "if (Get-Process -Name 'effectcraft*' -ErrorAction SilentlyContinue) {",
+        "    warn 'EffectCraft is running, so the state was not mirrored back to %APPDATA%\\EffectCraft. Quit it and uninstall again if you want that safety copy.'",
+        "    return",
+        "}",
+        "$previous = $ErrorActionPreference",
+        "$ErrorActionPreference = 'Continue'",
+        "$null = robocopy $data $legacy /E /XO /R:1 /W:1 /NFL /NDL /NJH /NJS /NP /NC 2>&1",
+        "$code = $LASTEXITCODE",
+        "$ErrorActionPreference = $previous",
+        "if ($code -ge 8) { warn \"robocopy exit $code while mirroring '$data' back to '$legacy'.\" } else { info \"Mirrored '$data' back to '$legacy': scoop removes EFFECTCRAFT_CONFIG_DIR on uninstall and EffectCraft falls back to that path.\" }"
+    ],
+    "bin": "effectcraft-cli.exe",
+    "shortcuts": [
+        [
+            "effectcraft.exe",
+            "EffectCraft"
+        ]
+    ],
+    "persist": "config",
+    "env_set": {
+        "EFFECTCRAFT_CONFIG_DIR": "$persist_dir\\config"
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/storytold/effectcraft/releases/download/v$version/effectcraft-$version-windows-x64-portable.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/storytold/effectcraft/releases/download/v$version/effectcraft-$version-windows-arm64-portable.zip"
+            }
+        }
+    }
+}
