@@ -1,5 +1,5 @@
 {
-    "version": "0.7.0",
+    "version": "0.8.0",
     "description": "Open-source presentation and slide-show editor in pure Rust: ribbon interface, slide thumbnails, speaker notes and vector diagrams",
     "homepage": "https://github.com/storytold/deckcraft",
     "license": "MIT OR Apache-2.0",
@@ -12,8 +12,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/storytold/deckcraft/releases/download/v0.7.0/deckcraft-0.7.0-windows-x64-portable.zip",
-            "hash": "3d67962a206af89d66ef443a042efcc5386a14d4e0d9c056bc1f62a84bd7954c",
+            "url": "https://github.com/storytold/deckcraft/releases/download/v0.8.0/deckcraft-0.8.0-windows-x64-portable.zip",
+            "hash": "5fbcf18b6cd7e95c3c371049ae0bb77d2c6e62b0ac1b8f009fe8228d9aed9b17",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\deckcraft-$version-windows-x64-portable\"",
@@ -23,8 +23,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/storytold/deckcraft/releases/download/v0.7.0/deckcraft-0.7.0-windows-arm64-portable.zip",
-            "hash": "6eeb87f511ae522da495bc1150ad3d80e1992a92d3c012215593039b47bf7b64",
+            "url": "https://github.com/storytold/deckcraft/releases/download/v0.8.0/deckcraft-0.8.0-windows-arm64-portable.zip",
+            "hash": "0a0f7922204ec14b7dd63f423205a631cd8137269bf9492db322a42612055423",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\deckcraft-$version-windows-arm64-portable\"",
