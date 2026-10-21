@@ -1,5 +1,5 @@
 {
-    "version": "0.13.1",
+    "version": "0.14.0",
     "description": "Open-source vector illustration rebuilt in pure Rust: pen and booleans, live blends and effects, gradient mesh, perspective grids and image tracing",
     "homepage": "https://github.com/storytold/vectorcraft",
     "license": "MIT OR Apache-2.0",
@@ -13,8 +13,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/storytold/vectorcraft/releases/download/v0.13.1/vectorcraft-0.13.1-windows-x64-portable.zip",
-            "hash": "6c46505e20dfd637b37ff8e1ead9aa69758acdc877ae46cc8b3338463e078b51",
+            "url": "https://github.com/storytold/vectorcraft/releases/download/v0.14.0/vectorcraft-0.14.0-windows-x64-portable.zip",
+            "hash": "4525707341aa298f648c32878f93da2af06742e53d0922b5de418b3dbd6b235e",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\vectorcraft-$version-windows-x64-portable\"",
@@ -24,8 +24,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/storytold/vectorcraft/releases/download/v0.13.1/vectorcraft-0.13.1-windows-arm64-portable.zip",
-            "hash": "cdc5c27d1105afa66ec955f8a9e846a9bd3a33b1f195f6e5bc9b85f4949fc36c",
+            "url": "https://github.com/storytold/vectorcraft/releases/download/v0.14.0/vectorcraft-0.14.0-windows-arm64-portable.zip",
+            "hash": "4b109ec0a3d0326461dee76352e49ade18e0b1aff115f3b6f41443ded8a29f61",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\vectorcraft-$version-windows-arm64-portable\"",
