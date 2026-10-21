@@ -1,5 +1,5 @@
 {
-    "version": "0.11.1",
+    "version": "0.12.0",
     "description": "Open-source, clean-room reimplementation of Adobe Photoshop in pure Rust: layers, masks, adjustment layers, type, vectors, brushes and real PSD files",
     "homepage": "https://github.com/storytold/photocraft",
     "license": "MIT OR Apache-2.0",
@@ -13,8 +13,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/storytold/photocraft/releases/download/v0.11.1/photocraft-0.11.1-windows-x64-portable.zip",
-            "hash": "00570cb1a2da18a5677b28296f6cefae46dfad3011f51b8369146dcc73a2777a",
+            "url": "https://github.com/storytold/photocraft/releases/download/v0.12.0/photocraft-0.12.0-windows-x64-portable.zip",
+            "hash": "fdc8da51cba975e52ddc4dfb4833b4001c10ea7e067423b1304569a67a41aaff",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\photocraft-$version-windows-x64-portable\"",
@@ -24,8 +24,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/storytold/photocraft/releases/download/v0.11.1/photocraft-0.11.1-windows-arm64-portable.zip",
-            "hash": "f4a60a0d277653080817674d437392caff18dbb8a15f7b0da6f94b8a7dba7760",
+            "url": "https://github.com/storytold/photocraft/releases/download/v0.12.0/photocraft-0.12.0-windows-arm64-portable.zip",
+            "hash": "c187af98e40bc51ab3353159f0aad39ffa508f34d3b0ce7aabfa95ecc5320f02",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\photocraft-$version-windows-arm64-portable\"",
