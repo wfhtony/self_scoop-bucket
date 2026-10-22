@@ -1,5 +1,5 @@
 {
-    "version": "0.11.0",
+    "version": "0.12.1",
     "description": "Open-source digital audio workstation in pure Rust: multitrack recording, editing, mixing, MIDI, automation and plugins",
     "homepage": "https://github.com/storytold/soundcraft",
     "license": "MIT OR Apache-2.0",
@@ -13,8 +13,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/storytold/soundcraft/releases/download/v0.11.0/soundcraft-0.11.0-windows-x64-portable.zip",
-            "hash": "1c34c93c2648d86fb4ace1343af2b28f1d7cced0680ef48bbae145f63e1a9aa6",
+            "url": "https://github.com/storytold/soundcraft/releases/download/v0.12.1/soundcraft-0.12.1-windows-x64-portable.zip",
+            "hash": "97760e9510f867fc9b8ab7182dfb7ac404d7744f53fa7e7c39140cb8e0635bca",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\soundcraft-$version-windows-x64-portable\"",
@@ -24,8 +24,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/storytold/soundcraft/releases/download/v0.11.0/soundcraft-0.11.0-windows-arm64-portable.zip",
-            "hash": "2c8b6d4fb5885c7dc66ef255293c4e3c08b52b3a283527d3af74ca616ce6d006",
+            "url": "https://github.com/storytold/soundcraft/releases/download/v0.12.1/soundcraft-0.12.1-windows-arm64-portable.zip",
+            "hash": "4cdcfb10a00ffc6bc07b4dfd760c720d1ca3d86484fa9de810205c32f17553a5",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\soundcraft-$version-windows-arm64-portable\"",
