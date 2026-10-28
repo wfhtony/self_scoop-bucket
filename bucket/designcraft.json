@@ -1,5 +1,5 @@
 {
-    "version": "0.13.0",
+    "version": "0.14.0",
     "description": "Open-source page layout and publishing rebuilt in pure Rust: threaded stories, master pages, wrapped text and print-ready output",
     "homepage": "https://github.com/storytold/designcraft",
     "license": "MIT OR Apache-2.0",
@@ -13,8 +13,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/storytold/designcraft/releases/download/v0.13.0/designcraft-0.13.0-windows-x64-portable.zip",
-            "hash": "475fa75068817d4b3f574582af8d90763970dd259bfd5a074d65f2ccc56690ef",
+            "url": "https://github.com/storytold/designcraft/releases/download/v0.14.0/designcraft-0.14.0-windows-x64-portable.zip",
+            "hash": "4e06b9f60fa98326902994cc76945f1cd0c331b64f66b2a685b05da5db120eed",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\designcraft-$version-windows-x64-portable\"",
@@ -24,8 +24,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/storytold/designcraft/releases/download/v0.13.0/designcraft-0.13.0-windows-arm64-portable.zip",
-            "hash": "b677703713e9759cf7844208f26ed7bbe8d61225e50e273a9ff169b54c73b4cf",
+            "url": "https://github.com/storytold/designcraft/releases/download/v0.14.0/designcraft-0.14.0-windows-arm64-portable.zip",
+            "hash": "da3cfc290be9a35adc849c5eae634e93285524adf8f197d5e8d107c9531d3ea6",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\designcraft-$version-windows-arm64-portable\"",
