@@ -1,5 +1,5 @@
 {
-    "version": "0.15.1",
+    "version": "0.16.0",
     "description": "Open-source computer-aided design and drafting in pure Rust: floor plans, dimensions, schedules and a command line",
     "homepage": "https://github.com/storytold/cadcraft",
     "license": "MIT OR Apache-2.0",
@@ -13,8 +13,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/storytold/cadcraft/releases/download/v0.15.1/cadcraft-0.15.1-windows-x64-portable.zip",
-            "hash": "768359a9be14aab726d32e77a65212452bf37022316bffbcb19cf9886ae50b4b",
+            "url": "https://github.com/storytold/cadcraft/releases/download/v0.16.0/cadcraft-0.16.0-windows-x64-portable.zip",
+            "hash": "f1da79b0e8d334eb5bf5124902147d755b22e88bedc978330434b934c5303bf8",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\cadcraft-$version-windows-x64-portable\"",
@@ -24,8 +24,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/storytold/cadcraft/releases/download/v0.15.1/cadcraft-0.15.1-windows-arm64-portable.zip",
-            "hash": "152dced69ee1818ad1b8f255f336dc5e9539d472bd1b67ae113c0aab1f196696",
+            "url": "https://github.com/storytold/cadcraft/releases/download/v0.16.0/cadcraft-0.16.0-windows-arm64-portable.zip",
+            "hash": "c8068e7d5aa58baf62c237240427f519cb822826e358a999d455bab4b867f923",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\cadcraft-$version-windows-arm64-portable\"",
