@@ -1,5 +1,5 @@
 {
-    "version": "0.18.1",
+    "version": "0.19.0",
     "description": "Open-source photo library and raw developer that runs locally: cataloguing, non-destructive develop tools and batch export",
     "homepage": "https://github.com/storytold/lightcraft",
     "license": "MIT OR Apache-2.0",
@@ -13,8 +13,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/storytold/lightcraft/releases/download/v0.18.1/lightcraft-0.18.1-windows-x64-portable.zip",
-            "hash": "ade473a721cdce23b50e8052c5b4b874f6ac11b54073186d49098ac20c9f346b",
+            "url": "https://github.com/storytold/lightcraft/releases/download/v0.19.0/lightcraft-0.19.0-windows-x64-portable.zip",
+            "hash": "db123c053b3cff4ca5e4a31c373655aebc94207457ec88f839c54429f67c586c",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\lightcraft-$version-windows-x64-portable\"",
@@ -24,8 +24,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/storytold/lightcraft/releases/download/v0.18.1/lightcraft-0.18.1-windows-arm64-portable.zip",
-            "hash": "e59f7a33f6f2d3493e746eea487ba5f81f27920f51223ee75cdd9cacb54c0732",
+            "url": "https://github.com/storytold/lightcraft/releases/download/v0.19.0/lightcraft-0.19.0-windows-arm64-portable.zip",
+            "hash": "0f5bd86f86ea5235d3d9176681bed3afe4878bc996ff1e357453f7492a5b1da5",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\lightcraft-$version-windows-arm64-portable\"",
