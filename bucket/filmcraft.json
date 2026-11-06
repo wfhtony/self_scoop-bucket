@@ -1,5 +1,5 @@
 {
-    "version": "0.17.1",
+    "version": "0.18.0",
     "description": "Open-source video editor rebuilt in pure Rust: multi-track timeline, Lumetri-style colour, scopes, loudness metering and AAF/OTIO interchange",
     "homepage": "https://github.com/storytold/filmcraft",
     "license": "MIT OR Apache-2.0",
@@ -13,8 +13,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/storytold/filmcraft/releases/download/v0.17.1/filmcraft-0.17.1-windows-x64-portable.zip",
-            "hash": "6a87da6b1bbf3251a6995626f8de42388c6255e10f434a893034774b4a5a6766",
+            "url": "https://github.com/storytold/filmcraft/releases/download/v0.18.0/filmcraft-0.18.0-windows-x64-portable.zip",
+            "hash": "82847cf49087e95fd3f72dde80955d1c63af2821ad677e34e3de7a0e873e95bf",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\filmcraft-$version-windows-x64-portable\"",
@@ -24,8 +24,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/storytold/filmcraft/releases/download/v0.17.1/filmcraft-0.17.1-windows-arm64-portable.zip",
-            "hash": "2c56464ca0cf144d3fdfe75eee1c4bee435aed929c26f8b9ee80a5de7de5bea5",
+            "url": "https://github.com/storytold/filmcraft/releases/download/v0.18.0/filmcraft-0.18.0-windows-arm64-portable.zip",
+            "hash": "522fa8efb9872c11c56de99e5793f542a1cc33e5771fe574038040025d0864a0",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\filmcraft-$version-windows-arm64-portable\"",
