@@ -1,5 +1,5 @@
 {
-    "version": "0.18.2",
+    "version": "0.19.0",
     "description": "Open-source PDF workbench: read, organize, combine, split, comment, fill and secure documents",
     "homepage": "https://github.com/storytold/pdfcraft",
     "license": "MIT OR Apache-2.0",
@@ -13,8 +13,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/storytold/pdfcraft/releases/download/v0.18.2/pdfcraft-0.18.2-windows-x64-portable.zip",
-            "hash": "461af5fea63e585aeaed8aa696d9ad243401e5b040ef112f912f2282be767e1d",
+            "url": "https://github.com/storytold/pdfcraft/releases/download/v0.19.0/pdfcraft-0.19.0-windows-x64-portable.zip",
+            "hash": "73efe9ea0f4ff81bf3b7708ae9779e021db9b9acfa4962b7dc6444c2fef08a90",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\pdfcraft-$version-windows-x64-portable\"",
@@ -24,8 +24,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/storytold/pdfcraft/releases/download/v0.18.2/pdfcraft-0.18.2-windows-arm64-portable.zip",
-            "hash": "7698bca5bb1c9f5937ff547b3d8d49fb4d600152f9d62e5e68c2e7d04f953b79",
+            "url": "https://github.com/storytold/pdfcraft/releases/download/v0.19.0/pdfcraft-0.19.0-windows-arm64-portable.zip",
+            "hash": "6c89d15a8c11c895360c85864912383a17b5ee62829abce8f30dd8e683676e48",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\pdfcraft-$version-windows-arm64-portable\"",
