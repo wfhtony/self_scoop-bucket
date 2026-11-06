@@ -1,5 +1,5 @@
 {
-    "version": "0.21.1",
+    "version": "0.22.0",
     "description": "Open-source motion graphics and visual effects built in pure Rust: compositions, keyframes, tracking and rotoscoping",
     "homepage": "https://github.com/storytold/effectcraft",
     "license": "MIT OR Apache-2.0",
@@ -13,8 +13,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/storytold/effectcraft/releases/download/v0.21.1/effectcraft-0.21.1-windows-x64-portable.zip",
-            "hash": "598e8c78483f00926f1b9f88c055f53e4c771f824f06a52ad02ab18be5c66213",
+            "url": "https://github.com/storytold/effectcraft/releases/download/v0.22.0/effectcraft-0.22.0-windows-x64-portable.zip",
+            "hash": "a690c870390d7ff673b8443acf620c79662e47d37541fbb0c4fd6988850ca188",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\effectcraft-$version-windows-x64-portable\"",
@@ -24,8 +24,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/storytold/effectcraft/releases/download/v0.21.1/effectcraft-0.21.1-windows-arm64-portable.zip",
-            "hash": "fd96b43b3821647db66213c8059345ea6f02d2d8479c7449f24c45813e53083a",
+            "url": "https://github.com/storytold/effectcraft/releases/download/v0.22.0/effectcraft-0.22.0-windows-arm64-portable.zip",
+            "hash": "481588906a898ebd23117bc4e2a9969f9e94dc2f771b7836f994ac04c737bc1d",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\effectcraft-$version-windows-arm64-portable\"",
