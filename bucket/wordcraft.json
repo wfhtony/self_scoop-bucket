@@ -1,5 +1,5 @@
 {
-    "version": "0.15.2",
+    "version": "0.16.0",
     "description": "Open-source word processing rebuilt in pure Rust: ribbon interface, styles gallery, navigation pane and threaded documents",
     "homepage": "https://github.com/storytold/wordcraft",
     "license": "MIT OR Apache-2.0",
@@ -12,8 +12,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/storytold/wordcraft/releases/download/v0.15.2/wordcraft-0.15.2-windows-x64-portable.zip",
-            "hash": "ddd5c868d927e7ee6621fd0325486963a3ea3a5b5ce46ddae7e70d7a1ff5124d",
+            "url": "https://github.com/storytold/wordcraft/releases/download/v0.16.0/wordcraft-0.16.0-windows-x64-portable.zip",
+            "hash": "aab5bfc4b5ce63c1bb1036ea2ab68aa1dbb300d8936de948c29739b15b3118e3",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\wordcraft-$version-windows-x64-portable\"",
@@ -23,8 +23,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/storytold/wordcraft/releases/download/v0.15.2/wordcraft-0.15.2-windows-arm64-portable.zip",
-            "hash": "bedba4677a9e128c2e041ddebe44d2c236b2bfa29a1f683136e6104cc0e2d08c",
+            "url": "https://github.com/storytold/wordcraft/releases/download/v0.16.0/wordcraft-0.16.0-windows-arm64-portable.zip",
+            "hash": "0911abee37d9cc3797fd28e0d5694c9416f7c0d6d14e6c76ba820c10f461d377",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\wordcraft-$version-windows-arm64-portable\"",
