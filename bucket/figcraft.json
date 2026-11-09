@@ -1,5 +1,5 @@
 {
-    "version": "0.16.0",
+    "version": "0.17.0",
     "description": "Open-source interface design and prototyping rebuilt in pure Rust: auto layout, components, variables and multi-screen canvases",
     "homepage": "https://github.com/storytold/figcraft",
     "license": "MIT OR Apache-2.0",
@@ -12,8 +12,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/storytold/figcraft/releases/download/v0.16.0/figcraft-0.16.0-windows-x64-portable.zip",
-            "hash": "72bb9e9ad1a2c8a5143a0012ddac028f5564de01c0cea967dec2f950fbbb49f8",
+            "url": "https://github.com/storytold/figcraft/releases/download/v0.17.0/figcraft-0.17.0-windows-x64-portable.zip",
+            "hash": "40912deff59d5739ca31bf9dc67c4d0f1248b7e1e139b5fe1bb85998dc322b0a",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\figcraft-$version-windows-x64-portable\"",
@@ -23,8 +23,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/storytold/figcraft/releases/download/v0.16.0/figcraft-0.16.0-windows-arm64-portable.zip",
-            "hash": "211adbb1db3bef0254f03d56c9b5c4eec4989dc521b6ef9e77c43b6cdb157f3b",
+            "url": "https://github.com/storytold/figcraft/releases/download/v0.17.0/figcraft-0.17.0-windows-arm64-portable.zip",
+            "hash": "4c4c6b62a6fe580c32ff934ac050f7aa54935834df05e2f8f7e9739d3a0c0bb0",
             "installer": {
                 "script": [
                     "$stage = \"$dir\\figcraft-$version-windows-arm64-portable\"",
